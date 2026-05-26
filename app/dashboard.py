@@ -15,6 +15,7 @@ import os
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import streamlit.components.v1 as components
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -290,6 +291,26 @@ def render_pdf_citation(
         st.caption(
             "Run `rebuild-trace` to attach resolving transcript id, or check resolution timeline."
         )
+
+
+_ARCHITECTURE_HTML = _ROOT / "docs" / "claimwatch-architecture.html"
+
+
+@st.cache_data
+def _load_architecture_html() -> str:
+    if not _ARCHITECTURE_HTML.is_file():
+        return (
+            "<p style='font-family:sans-serif;color:#c00'>"
+            f"Missing {_ARCHITECTURE_HTML}. Add docs/claimwatch-architecture.html to the repo."
+            "</p>"
+        )
+    return _ARCHITECTURE_HTML.read_text(encoding="utf-8")
+
+
+def page_architecture() -> None:
+    """Embedded interactive architecture (docs/claimwatch-architecture.html)."""
+    st.caption("Interactive diagram from `docs/claimwatch-architecture.html` — click nodes for details.")
+    components.html(_load_architecture_html(), height=920, scrolling=True)
 
 
 def page_overview(bundle, timelines):
@@ -924,6 +945,28 @@ def main():
         initial_sidebar_state="expanded",
     )
 
+    st.sidebar.title("ClaimWatch")
+
+    nav_options = [
+        "Overview",
+        "Architecture",
+        "LLM Cost",
+        "Pipeline Eval",
+        "Claims Explorer",
+        "Claim Detail",
+        "Threads",
+        "Resolution Analytics",
+        "Speakers",
+    ]
+    default_nav = st.session_state.pop("nav_page", nav_options[0])
+    if default_nav not in nav_options:
+        default_nav = nav_options[0]
+    page = st.sidebar.radio("Navigate", nav_options, index=nav_options.index(default_nav))
+
+    if page == "Architecture":
+        page_architecture()
+        return
+
     if not corpus_available():
         st.error(
             "Corpus not found. Run the pipeline first:\n\n"
@@ -939,7 +982,6 @@ def main():
 
     timelines = get_timelines(str(bundle.corpus_dir))
 
-    st.sidebar.title("ClaimWatch")
     st.sidebar.caption(bundle.corpus_label)
     st.sidebar.caption(f"Data: `{bundle.corpus_dir}`")
     pdf_ok = resolve_pdf_path(bundle.enriched[0].claim.source_doc) if bundle.enriched else None
@@ -959,21 +1001,6 @@ def main():
             hide_index=True,
         )
         st.caption("[docs/taxonomy.md](docs/taxonomy.md)")
-
-    nav_options = [
-        "Overview",
-        "LLM Cost",
-        "Pipeline Eval",
-        "Claims Explorer",
-        "Claim Detail",
-        "Threads",
-        "Resolution Analytics",
-        "Speakers",
-    ]
-    default_nav = st.session_state.pop("nav_page", nav_options[0])
-    if default_nav not in nav_options:
-        default_nav = nav_options[0]
-    page = st.sidebar.radio("Navigate", nav_options, index=nav_options.index(default_nav))
 
     pages = {
         "Overview": lambda: page_overview(bundle, timelines),
