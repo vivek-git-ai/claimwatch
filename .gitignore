@@ -1,1 +1,6 @@
-.idea/
+.idea
+.venv
+.env
+__pycahce__/
+*.pyc
+uv.lock

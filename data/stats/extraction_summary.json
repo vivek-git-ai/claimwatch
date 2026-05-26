@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-05-20T09:17:39.968836+00:00",
+  "totals": {
+    "transcripts": 7,
+    "total_claims": 40
+  },
+  "transcripts": [
+    {
+      "transcript_id": "00_2021-05-20_earnings_call_Q1",
+      "transcript_date": "2021-05-20",
+      "claims_extracted": 3,
+      "quantitative": 3,
+      "qualitative": 0,
+      "model": "gpt-4o-mini",
+      "tokens_in": 2898,
+      "tokens_out": 265,
+      "cost_usd": 0.0099
+    },
+    {
+      "transcript_id": "01_2021-06-08_esg_meeting",
+      "transcript_date": "2021-06-08",
+      "claims_extracted": 3,
+      "quantitative": 2,
+      "qualitative": 1,
+      "model": "gpt-4o-mini",
+      "tokens_in": 3432,
+      "tokens_out": 351,
+      "cost_usd": 0.0121
+    },
+    {
+      "transcript_id": "02_2021-08-19_earnings_call_Q2",
+      "transcript_date": "2021-08-19",
+      "claims_extracted": 10,
+      "quantitative": 0,
+      "qualitative": 10,
+      "model": "gpt-4o-mini",
+      "tokens_in": 6256,
+      "tokens_out": 1000,
+      "cost_usd": 0.0256
+    },
+    {
+      "transcript_id": "03_2021-11-25_earnings_call_Q3",
+      "transcript_date": "2021-11-25",
+      "claims_extracted": 6,
+      "quantitative": 3,
+      "qualitative": 3,
+      "model": "gpt-4o-mini",
+      "tokens_in": 4535,
+      "tokens_out": 586,
+      "cost_usd": 0.0172
+    },
+    {
+      "transcript_id": "04_2022-02-10_earnings_call_Q4",
+      "transcript_date": "2022-02-10",
+      "claims_extracted": 7,
+      "quantitative": 5,
+      "qualitative": 2,
+      "model": "gpt-4o-mini",
+      "tokens_in": 5083,
+      "tokens_out": 702,
+      "cost_usd": 0.0197
+    },
+    {
+      "transcript_id": "05_2022-03-03_esg_meeting",
+      "transcript_date": "2022-03-03",
+      "claims_extracted": 5,
+      "quantitative": 3,
+      "qualitative": 2,
+      "model": "gpt-4o-mini",
+      "tokens_in": 4997,
+      "tokens_out": 533,
+      "cost_usd": 0.0178
+    },
+    {
+      "transcript_id": "06_2022-04-06_agm",
+      "transcript_date": "2022-04-06",
+      "claims_extracted": 6,
+      "quantitative": 1,
+      "qualitative": 5,
+      "model": "gpt-4o-mini",
+      "tokens_in": 3214,
+      "tokens_out": 617,
+      "cost_usd": 0.0142
+    }
+  ]
+}

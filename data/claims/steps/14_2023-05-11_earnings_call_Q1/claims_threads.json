@@ -1,0 +1,2870 @@
+{
+  "schema_version": "1.0",
+  "corpus": "Rockwool International, 31 transcripts",
+  "total_threads": 107,
+  "threads": [
+    {
+      "thread_id": "T-production-ramp-up",
+      "subject": "Production ramp-up",
+      "category": "operational",
+      "n_claims": 2,
+      "first_date": "2021-05-20",
+      "last_date": "2021-08-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-001",
+        "RKW-026"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-001",
+          "date": "2021-05-20",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "partial"
+        },
+        {
+          "claim_id": "RKW-026",
+          "date": "2021-08-19",
+          "target_value": "ramping up",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-west-virginia-factory-startup",
+      "subject": "West Virginia factory startup",
+      "category": "capex_capacity",
+      "n_claims": 2,
+      "first_date": "2021-05-20",
+      "last_date": "2021-08-19",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-002",
+        "RKW-021"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-002",
+          "date": "2021-05-20",
+          "target_value": "midyear early third quarter 2021",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-021",
+          "date": "2021-08-19",
+          "target_value": "progressing",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-fy2021-financial-guidance",
+      "subject": "FY2021 financial guidance",
+      "category": "financial_guidance",
+      "n_claims": 4,
+      "first_date": "2021-05-20",
+      "last_date": "2022-08-24",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-003",
+        "RKW-004",
+        "RKW-008",
+        "RKW-085"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-003",
+          "date": "2021-05-20",
+          "target_value": "10% to 12%, ~€730 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-004",
+          "date": "2021-05-20",
+          "target_value": "10% to 12%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-008",
+          "date": "2021-05-20",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        },
+        {
+          "claim_id": "RKW-085",
+          "date": "2022-08-24",
+          "target_value": "20% to 25%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-market-outlook",
+      "subject": "Market outlook",
+      "category": "market_outlook",
+      "n_claims": 3,
+      "first_date": "2021-05-20",
+      "last_date": "2022-08-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-005",
+        "RKW-022",
+        "RKW-086"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-005",
+          "date": "2021-05-20",
+          "target_value": "18 to 24 months",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-022",
+          "date": "2021-08-19",
+          "target_value": "unified decision needed",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-086",
+          "date": "2022-08-24",
+          "target_value": "lower activity",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capex-guidance",
+      "subject": "CapEx guidance",
+      "category": "capex_capacity",
+      "n_claims": 2,
+      "first_date": "2021-05-20",
+      "last_date": "2021-08-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-006",
+        "RKW-019"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-006",
+          "date": "2021-05-20",
+          "target_value": "above €200 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-019",
+          "date": "2021-08-19",
+          "target_value": "€370 million",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-construction-industry-outlook",
+      "subject": "Construction industry outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-007"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-007",
+          "date": "2021-05-20",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-2021-performance-outlook",
+      "subject": "2021 performance outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "partial",
+      "claim_ids": [
+        "RKW-009"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-009",
+          "date": "2021-05-20",
+          "target_value": "better than 2019",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "partial"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-west-virginia-factory-startup",
+      "subject": "T-west-virginia-factory-startup",
+      "category": "operational",
+      "n_claims": 1,
+      "first_date": "2021-06-08",
+      "last_date": "2021-06-08",
+      "final_status": "partial",
+      "claim_ids": [
+        "RKW-010"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-010",
+          "date": "2021-06-08",
+          "target_value": "late June 2021",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "partial"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-2021-performance-outlook",
+      "subject": "T-2021-performance-outlook",
+      "category": "sustainability",
+      "n_claims": 2,
+      "first_date": "2021-06-08",
+      "last_date": "2022-02-10",
+      "final_status": "partial",
+      "claim_ids": [
+        "RKW-011",
+        "RKW-049"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-011",
+          "date": "2021-06-08",
+          "target_value": "15%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "failed"
+        },
+        {
+          "claim_id": "RKW-049",
+          "date": "2022-02-10",
+          "target_value": "15% to 20%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "partial"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-capex-guidance",
+      "subject": "T-capex-guidance",
+      "category": "financial_guidance",
+      "n_claims": 6,
+      "first_date": "2021-06-08",
+      "last_date": "2022-05-19",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-012",
+        "RKW-039",
+        "RKW-047",
+        "RKW-055",
+        "RKW-078",
+        "RKW-079"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-012",
+          "date": "2021-06-08",
+          "target_value": "€4 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-039",
+          "date": "2021-11-25",
+          "target_value": "€320 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-047",
+          "date": "2021-11-25",
+          "target_value": "€200 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "failed"
+        },
+        {
+          "claim_id": "RKW-055",
+          "date": "2022-02-10",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-078",
+          "date": "2022-05-19",
+          "target_value": "increased",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-079",
+          "date": "2022-05-19",
+          "target_value": "up to 13%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-construction-industry-outlook",
+      "subject": "T-construction-industry-outlook",
+      "category": "sustainability",
+      "n_claims": 5,
+      "first_date": "2021-06-08",
+      "last_date": "2021-11-25",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-013",
+        "RKW-014",
+        "RKW-015",
+        "RKW-016",
+        "RKW-040"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-013",
+          "date": "2021-06-08",
+          "target_value": "2,500 tonnes",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-014",
+          "date": "2021-06-08",
+          "target_value": "1,800 tons",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-015",
+          "date": "2021-06-08",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-016",
+          "date": "2021-06-08",
+          "target_value": "DGNB gold certification",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-040",
+          "date": "2021-11-25",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-pricing-outlook",
+      "subject": "Pricing outlook",
+      "category": "financial_guidance",
+      "n_claims": 3,
+      "first_date": "2021-08-19",
+      "last_date": "2022-08-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-017",
+        "RKW-018",
+        "RKW-089"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-017",
+          "date": "2021-08-19",
+          "target_value": "gradually improve",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-018",
+          "date": "2021-08-19",
+          "target_value": "balance between inflation and price",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-089",
+          "date": "2022-08-24",
+          "target_value": "10%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-poland-line-startup",
+      "subject": "Poland line startup",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2021-08-19",
+      "last_date": "2021-08-19",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-020"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-020",
+          "date": "2021-08-19",
+          "target_value": "end of Q1 2022",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-sustainability-progress",
+      "subject": "Sustainability progress",
+      "category": "sustainability",
+      "n_claims": 5,
+      "first_date": "2021-08-19",
+      "last_date": "2022-08-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-023",
+        "RKW-091",
+        "RKW-095",
+        "RKW-101",
+        "RKW-106"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-023",
+          "date": "2021-08-19",
+          "target_value": "ahead of plan",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-091",
+          "date": "2022-08-24",
+          "target_value": "15 countries",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        },
+        {
+          "claim_id": "RKW-095",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-101",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-106",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-japan-factory-upgrade",
+      "subject": "Japan factory upgrade",
+      "category": "capex_capacity",
+      "n_claims": 2,
+      "first_date": "2021-08-19",
+      "last_date": "2021-08-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-024",
+        "RKW-025"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-024",
+          "date": "2021-08-19",
+          "target_value": "upgrade",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-025",
+          "date": "2021-08-19",
+          "target_value": "planning initiated",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-energy-efficiency-improvement",
+      "subject": "Energy efficiency improvement",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2021-08-19",
+      "last_date": "2021-08-19",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-027"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-027",
+          "date": "2021-08-19",
+          "target_value": "improve",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-ebit-margin-outlook",
+      "subject": "EBIT margin outlook",
+      "category": "financial_guidance",
+      "n_claims": 4,
+      "first_date": "2021-08-19",
+      "last_date": "2022-08-24",
+      "final_status": "revised",
+      "claim_ids": [
+        "RKW-028",
+        "RKW-033",
+        "RKW-087",
+        "RKW-088"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-028",
+          "date": "2021-08-19",
+          "target_value": "satisfied",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "partial"
+        },
+        {
+          "claim_id": "RKW-033",
+          "date": "2021-08-19",
+          "target_value": "satisfied",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "partial"
+        },
+        {
+          "claim_id": "RKW-087",
+          "date": "2022-08-24",
+          "target_value": "12%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-088",
+          "date": "2022-08-24",
+          "target_value": "10% to 12%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capacity-utilization",
+      "subject": "Capacity utilization",
+      "category": "operational",
+      "n_claims": 2,
+      "first_date": "2021-08-19",
+      "last_date": "2021-08-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-029",
+        "RKW-034"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-029",
+          "date": "2021-08-19",
+          "target_value": "increasing",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        },
+        {
+          "claim_id": "RKW-034",
+          "date": "2021-08-19",
+          "target_value": "increasing",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-construction-market-risk",
+      "subject": "Construction market risk",
+      "category": "market_outlook",
+      "n_claims": 2,
+      "first_date": "2021-08-19",
+      "last_date": "2021-08-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-030",
+        "RKW-035"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-030",
+          "date": "2021-08-19",
+          "target_value": "pause projects",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        },
+        {
+          "claim_id": "RKW-035",
+          "date": "2021-08-19",
+          "target_value": "pause projects",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capacity-for-growth",
+      "subject": "Capacity for growth",
+      "category": "capex_capacity",
+      "n_claims": 2,
+      "first_date": "2021-08-19",
+      "last_date": "2021-08-19",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-031",
+        "RKW-036"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-031",
+          "date": "2021-08-19",
+          "target_value": "free capacity",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-036",
+          "date": "2021-08-19",
+          "target_value": "free capacity",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-impact-of-ranson-startup",
+      "subject": "Impact of Ranson startup",
+      "category": "financial_guidance",
+      "n_claims": 2,
+      "first_date": "2021-08-19",
+      "last_date": "2021-08-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-032",
+        "RKW-037"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-032",
+          "date": "2021-08-19",
+          "target_value": "0.5 to 1 percentage point",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-037",
+          "date": "2021-08-19",
+          "target_value": "0.5 to 1 percentage point",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-fy2021-financial-guidance-2",
+      "subject": "FY2021 financial guidance",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2021-11-25",
+      "last_date": "2021-11-25",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-038"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-038",
+          "date": "2021-11-25",
+          "target_value": "above 13%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-pricing-outlook-2",
+      "subject": "pricing outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-11-25",
+      "last_date": "2021-11-25",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-041"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-041",
+          "date": "2021-11-25",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-pricing-outlook-3",
+      "subject": "pricing outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-11-25",
+      "last_date": "2021-11-25",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-042"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-042",
+          "date": "2021-11-25",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-ebit-margin-outlook-2",
+      "subject": "EBIT margin outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-11-25",
+      "last_date": "2021-11-25",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-043"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-043",
+          "date": "2021-11-25",
+          "target_value": "14% to 15%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-pricing-outlook-4",
+      "subject": "pricing outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-11-25",
+      "last_date": "2021-11-25",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-044"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-044",
+          "date": "2021-11-25",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-construction-market-risk-2",
+      "subject": "construction market risk",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-11-25",
+      "last_date": "2021-11-25",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-045"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-045",
+          "date": "2021-11-25",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-market-outlook-2",
+      "subject": "market outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-11-25",
+      "last_date": "2021-11-25",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-046"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-046",
+          "date": "2021-11-25",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-ebit-margin-outlook",
+      "subject": "T-ebit-margin-outlook",
+      "category": "financial_guidance",
+      "n_claims": 6,
+      "first_date": "2022-02-10",
+      "last_date": "2022-11-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-048",
+        "RKW-050",
+        "RKW-057",
+        "RKW-076",
+        "RKW-081",
+        "RKW-123"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-048",
+          "date": "2022-02-10",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "failed"
+        },
+        {
+          "claim_id": "RKW-050",
+          "date": "2022-02-10",
+          "target_value": "13%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-057",
+          "date": "2022-02-10",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "partial"
+        },
+        {
+          "claim_id": "RKW-076",
+          "date": "2022-05-19",
+          "target_value": "13%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-081",
+          "date": "2022-05-19",
+          "target_value": "about 13% or higher",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-123",
+          "date": "2022-11-24",
+          "target_value": "10% to 11%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-capacity-for-growth",
+      "subject": "T-capacity-for-growth",
+      "category": "strategic_intent",
+      "n_claims": 3,
+      "first_date": "2022-02-10",
+      "last_date": "2022-05-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-051",
+        "RKW-083",
+        "RKW-084"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-051",
+          "date": "2022-02-10",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-083",
+          "date": "2022-05-19",
+          "target_value": "more than 3%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-084",
+          "date": "2022-05-19",
+          "target_value": "single-digit growth",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-market-outlook",
+      "subject": "T-market-outlook",
+      "category": "strategic_intent",
+      "n_claims": 5,
+      "first_date": "2022-02-10",
+      "last_date": "2022-05-19",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-052",
+        "RKW-074",
+        "RKW-075",
+        "RKW-080",
+        "RKW-082"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-052",
+          "date": "2022-02-10",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-074",
+          "date": "2022-05-19",
+          "target_value": "declining",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-075",
+          "date": "2022-05-19",
+          "target_value": "normalization of volume growth",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-080",
+          "date": "2022-05-19",
+          "target_value": "reaction in the market",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-082",
+          "date": "2022-05-19",
+          "target_value": "decline",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-energy-efficiency-improvement",
+      "subject": "T-energy-efficiency-improvement",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2022-02-10",
+      "last_date": "2022-02-10",
+      "final_status": "partial",
+      "claim_ids": [
+        "RKW-053"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-053",
+          "date": "2022-02-10",
+          "target_value": "35%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "partial"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-sustainability-progress",
+      "subject": "T-sustainability-progress",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2022-02-10",
+      "last_date": "2022-02-10",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-054"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-054",
+          "date": "2022-02-10",
+          "target_value": "38% for Scope 1 and 3, 20% for Scope 3",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-pricing-outlook",
+      "subject": "T-pricing-outlook",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-02-10",
+      "last_date": "2022-02-10",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-056"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-056",
+          "date": "2022-02-10",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-eu-green-claims-initiative",
+      "subject": "EU green claims initiative",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "failed",
+      "claim_ids": [
+        "RKW-058"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-058",
+          "date": "2022-03-03",
+          "target_value": "before summer 2022",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "failed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-energy-efficiency-directive-approval",
+      "subject": "Energy Efficiency Directive approval",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "failed",
+      "claim_ids": [
+        "RKW-059"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-059",
+          "date": "2022-03-03",
+          "target_value": "before summer 2022",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "failed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-safety-performance-improvement",
+      "subject": "Safety performance improvement",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "failed",
+      "claim_ids": [
+        "RKW-060"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-060",
+          "date": "2022-03-03",
+          "target_value": "10%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "failed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-energy-efficiency-target",
+      "subject": "Energy efficiency target",
+      "category": "sustainability",
+      "n_claims": 2,
+      "first_date": "2022-03-03",
+      "last_date": "2022-08-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-061",
+        "RKW-090"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-061",
+          "date": "2022-03-03",
+          "target_value": "35%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-090",
+          "date": "2022-08-24",
+          "target_value": "35%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-annual-sustainability-investment",
+      "subject": "Annual sustainability investment",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-062"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-062",
+          "date": "2022-03-03",
+          "target_value": "€100 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-impact-of-factory-conversions",
+      "subject": "Impact of factory conversions",
+      "category": "operational",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-063"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-063",
+          "date": "2022-03-03",
+          "target_value": "2022",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-building-renovation-energy-classes",
+      "subject": "Building renovation energy classes",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-064"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-064",
+          "date": "2022-03-03",
+          "target_value": "two or three classes",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-rockcycle-expansion",
+      "subject": "ROCKCYCLE expansion",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-065"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-065",
+          "date": "2022-03-03",
+          "target_value": "more countries",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-taxonomy-alignment-disclosure",
+      "subject": "Taxonomy alignment disclosure",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2022-03-03",
+      "last_date": "2022-03-03",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-066"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-066",
+          "date": "2022-03-03",
+          "target_value": "2023",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-investment-projects",
+      "subject": "investment projects",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-04-06",
+      "last_date": "2022-04-06",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-067"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-067",
+          "date": "2022-04-06",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-natural-gas-consumption",
+      "subject": "natural gas consumption",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2022-04-06",
+      "last_date": "2022-04-06",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-068"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-068",
+          "date": "2022-04-06",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-compliance-with-legislation",
+      "subject": "compliance with legislation",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-04-06",
+      "last_date": "2022-04-06",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-069"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-069",
+          "date": "2022-04-06",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-investment-in-technology",
+      "subject": "investment in technology",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-04-06",
+      "last_date": "2022-04-06",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-070"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-070",
+          "date": "2022-04-06",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capacity-needs",
+      "subject": "capacity needs",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2022-04-06",
+      "last_date": "2022-04-06",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-071"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-071",
+          "date": "2022-04-06",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-support-for-societal-goals",
+      "subject": "support for societal goals",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-04-06",
+      "last_date": "2022-04-06",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-072"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-072",
+          "date": "2022-04-06",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-investment-updates",
+      "subject": "investment updates",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-04-06",
+      "last_date": "2022-04-06",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-073"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-073",
+          "date": "2022-04-06",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-t-fy2021-financial-guidance",
+      "subject": "T-fy2021-financial-guidance",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-05-19",
+      "last_date": "2022-05-19",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-077"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-077",
+          "date": "2022-05-19",
+          "target_value": "20% to 25%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-water-consumption-reduction",
+      "subject": "water consumption reduction",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2022-08-24",
+      "last_date": "2022-08-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-092"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-092",
+          "date": "2022-08-24",
+          "target_value": "10%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-co2-emissions-reduction",
+      "subject": "CO2 emissions reduction",
+      "category": "sustainability",
+      "n_claims": 2,
+      "first_date": "2022-08-24",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-093",
+        "RKW-163"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-093",
+          "date": "2022-08-24",
+          "target_value": "10%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        },
+        {
+          "claim_id": "RKW-163",
+          "date": "2023-03-29",
+          "target_value": "17%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-landfill-waste-reduction",
+      "subject": "landfill waste reduction",
+      "category": "sustainability",
+      "n_claims": 3,
+      "first_date": "2022-08-24",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-094",
+        "RKW-139",
+        "RKW-143"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-094",
+          "date": "2022-08-24",
+          "target_value": "10%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        },
+        {
+          "claim_id": "RKW-139",
+          "date": "2023-02-09",
+          "target_value": "85%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-143",
+          "date": "2023-02-09",
+          "target_value": "85%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-fixed-cost-management",
+      "subject": "fixed cost management",
+      "category": "operational",
+      "n_claims": 1,
+      "first_date": "2022-08-24",
+      "last_date": "2022-08-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-096"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-096",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-energy-sourcing-strategy",
+      "subject": "energy sourcing strategy",
+      "category": "operational",
+      "n_claims": 1,
+      "first_date": "2022-08-24",
+      "last_date": "2022-08-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-097"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-097",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-russia-investment-strategy",
+      "subject": "Russia investment strategy",
+      "category": "strategic_intent",
+      "n_claims": 4,
+      "first_date": "2022-08-24",
+      "last_date": "2022-08-24",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-098",
+        "RKW-099",
+        "RKW-103",
+        "RKW-104"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-098",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-099",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-103",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-104",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-strategic-intent",
+      "subject": "strategic intent",
+      "category": "strategic_intent",
+      "n_claims": 2,
+      "first_date": "2022-08-24",
+      "last_date": "2022-08-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-100",
+        "RKW-105"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-100",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-105",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-market-exposure",
+      "subject": "market exposure",
+      "category": "operational",
+      "n_claims": 2,
+      "first_date": "2022-08-24",
+      "last_date": "2022-08-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-102",
+        "RKW-107"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-102",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-107",
+          "date": "2022-08-24",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-ukraine-reconstruction-commitment",
+      "subject": "Ukraine reconstruction commitment",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-08-31",
+      "last_date": "2022-08-31",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-108"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-108",
+          "date": "2022-08-31",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-ukraine-reconstruction-funding",
+      "subject": "Ukraine reconstruction funding",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-08-31",
+      "last_date": "2022-08-31",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-109"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-109",
+          "date": "2022-08-31",
+          "target_value": "DKK 200 million",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-winter-shelter-support",
+      "subject": "Winter shelter support",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-08-31",
+      "last_date": "2022-08-31",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-110"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-110",
+          "date": "2022-08-31",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-construction-process-timeline",
+      "subject": "Construction process timeline",
+      "category": "operational",
+      "n_claims": 1,
+      "first_date": "2022-08-31",
+      "last_date": "2022-08-31",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-111"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-111",
+          "date": "2022-08-31",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-project-management-involvement",
+      "subject": "Project management involvement",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-08-31",
+      "last_date": "2022-08-31",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-112"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-112",
+          "date": "2022-08-31",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-immediate-support-efforts",
+      "subject": "Immediate support efforts",
+      "category": "strategic_intent",
+      "n_claims": 1,
+      "first_date": "2022-08-31",
+      "last_date": "2022-08-31",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-113"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-113",
+          "date": "2022-08-31",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-future-funding-proposal",
+      "subject": "Future funding proposal",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-08-31",
+      "last_date": "2022-08-31",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-114"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-114",
+          "date": "2022-08-31",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-fy2022-financial-guidance",
+      "subject": "FY2022 financial guidance",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-115"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-115",
+          "date": "2022-11-24",
+          "target_value": "unchanged",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-gdp-outlook",
+      "subject": "GDP outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-116"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-116",
+          "date": "2022-11-24",
+          "target_value": "pessimistic",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-recession-outlook",
+      "subject": "Recession outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "partial",
+      "claim_ids": [
+        "RKW-117"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-117",
+          "date": "2022-11-24",
+          "target_value": "yes",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "partial"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-france-project-approval",
+      "subject": "France project approval",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "failed",
+      "claim_ids": [
+        "RKW-118"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-118",
+          "date": "2022-11-24",
+          "target_value": "Q4 2022",
+          "hedge_level": "moderate",
+          "status_after_this_utterance": "failed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-fy2022-revenue-guidance",
+      "subject": "FY2022 revenue guidance",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-119"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-119",
+          "date": "2022-11-24",
+          "target_value": "20% to 25%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-fy2023-financial-guidance",
+      "subject": "FY2023 financial guidance",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-120"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-120",
+          "date": "2022-11-24",
+          "target_value": "February 2023",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-gas-hedging",
+      "subject": "Gas hedging",
+      "category": "operational",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "stale",
+      "claim_ids": [
+        "RKW-121"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-121",
+          "date": "2022-11-24",
+          "target_value": "50%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "stale"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-pricing-strategy",
+      "subject": "Pricing strategy",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-122"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-122",
+          "date": "2022-11-24",
+          "target_value": "pass on inflation",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-construction-market-outlook",
+      "subject": "Construction market outlook",
+      "category": "market_outlook",
+      "n_claims": 4,
+      "first_date": "2022-11-24",
+      "last_date": "2023-05-11",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-124",
+        "RKW-128",
+        "RKW-170",
+        "RKW-178"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-124",
+          "date": "2022-11-24",
+          "target_value": "decline",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-128",
+          "date": "2023-02-09",
+          "target_value": "up to 10%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        },
+        {
+          "claim_id": "RKW-170",
+          "date": "2023-05-11",
+          "target_value": "depressed",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-178",
+          "date": "2023-05-11",
+          "target_value": "depressed",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-gas-availability-outlook",
+      "subject": "Gas availability outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-125"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-125",
+          "date": "2022-11-24",
+          "target_value": "not pessimistic",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-market-development-outlook",
+      "subject": "Market development outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2022-11-24",
+      "last_date": "2022-11-24",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-126"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-126",
+          "date": "2022-11-24",
+          "target_value": "monitoring",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-investment-strategy",
+      "subject": "investment strategy",
+      "category": "financial_guidance",
+      "n_claims": 2,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-127",
+        "RKW-137"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-127",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-137",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-future-growth-outlook",
+      "subject": "future growth outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-129"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-129",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capacity-investment",
+      "subject": "capacity investment",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-130"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-130",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-france-greenfield-project",
+      "subject": "France greenfield project",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "revised",
+      "claim_ids": [
+        "RKW-131"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-131",
+          "date": "2023-02-09",
+          "target_value": "2-3 months",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "revised"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-price-outlook",
+      "subject": "price outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-132"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-132",
+          "date": "2023-02-09",
+          "target_value": "up to 10%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-margin-outlook",
+      "subject": "margin outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-133"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-133",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-market-conditions",
+      "subject": "market conditions",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-134"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-134",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-sustainability-goals",
+      "subject": "sustainability goals",
+      "category": "sustainability",
+      "n_claims": 2,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-135",
+        "RKW-140"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-135",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-140",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-emission-reduction-target",
+      "subject": "emission reduction target",
+      "category": "sustainability",
+      "n_claims": 2,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "confirmed",
+      "claim_ids": [
+        "RKW-136",
+        "RKW-141"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-136",
+          "date": "2023-02-09",
+          "target_value": "38%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        },
+        {
+          "claim_id": "RKW-141",
+          "date": "2023-02-09",
+          "target_value": "38%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "confirmed"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-water-intensity-reduction",
+      "subject": "water intensity reduction",
+      "category": "sustainability",
+      "n_claims": 2,
+      "first_date": "2023-02-09",
+      "last_date": "2023-02-09",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-138",
+        "RKW-142"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-138",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-142",
+          "date": "2023-02-09",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-market-outlook-3",
+      "subject": "market-outlook",
+      "category": "market_outlook",
+      "n_claims": 4,
+      "first_date": "2023-03-02",
+      "last_date": "2023-03-02",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-144",
+        "RKW-145",
+        "RKW-146",
+        "RKW-147"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-144",
+          "date": "2023-03-02",
+          "target_value": "increased activity",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-145",
+          "date": "2023-03-02",
+          "target_value": "more focus on deeper renovations",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-146",
+          "date": "2023-03-02",
+          "target_value": "3% to 5%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-147",
+          "date": "2023-03-02",
+          "target_value": "standard on all future flat roofs",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capex-guidance-2",
+      "subject": "capex-guidance",
+      "category": "capex_capacity",
+      "n_claims": 2,
+      "first_date": "2023-03-02",
+      "last_date": "2023-03-02",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-148",
+        "RKW-150"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-148",
+          "date": "2023-03-02",
+          "target_value": "€100 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-150",
+          "date": "2023-03-02",
+          "target_value": "investments for replacing fossil fuel",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-west-virginia-factory-startup-2",
+      "subject": "west-virginia-factory-startup",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2023-03-02",
+      "last_date": "2023-03-02",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-149"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-149",
+          "date": "2023-03-02",
+          "target_value": "new production line in Romania",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-safety-performance-improvement-2",
+      "subject": "safety-performance-improvement",
+      "category": "sustainability",
+      "n_claims": 2,
+      "first_date": "2023-03-02",
+      "last_date": "2023-03-02",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-151",
+        "RKW-158"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-151",
+          "date": "2023-03-02",
+          "target_value": "reduce lost time incidents",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-158",
+          "date": "2023-03-02",
+          "target_value": "improve safety performance",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-sustainability-progress-2",
+      "subject": "sustainability-progress",
+      "category": "sustainability",
+      "n_claims": 6,
+      "first_date": "2023-03-02",
+      "last_date": "2023-03-02",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-152",
+        "RKW-153",
+        "RKW-154",
+        "RKW-155",
+        "RKW-156",
+        "RKW-157"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-152",
+          "date": "2023-03-02",
+          "target_value": "1 million tonnes CO2",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-153",
+          "date": "2023-03-02",
+          "target_value": "20% improvement",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-154",
+          "date": "2023-03-02",
+          "target_value": "more than 60% reduction",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-155",
+          "date": "2023-03-02",
+          "target_value": "up to 30% reduction",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-156",
+          "date": "2023-03-02",
+          "target_value": "68,000 tonnes",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-157",
+          "date": "2023-03-02",
+          "target_value": "increase assurance scope",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-2023-financial-guidance",
+      "subject": "2023 financial guidance",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-159"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-159",
+          "date": "2023-03-29",
+          "target_value": "up to 10%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-2023-capex-guidance",
+      "subject": "2023 CapEx guidance",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-160"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-160",
+          "date": "2023-03-29",
+          "target_value": "€400 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-energy-efficiency-market-outlook",
+      "subject": "energy efficiency market outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-161"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-161",
+          "date": "2023-03-29",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-greenhouse-gas-emissions-reduction-targets",
+      "subject": "greenhouse gas emissions reduction targets",
+      "category": "sustainability",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-162"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-162",
+          "date": "2023-03-29",
+          "target_value": "38% and 20%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capacity-expansion",
+      "subject": "capacity expansion",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-164"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-164",
+          "date": "2023-03-29",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-warsaw-factory-startup",
+      "subject": "Warsaw factory startup",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-165"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-165",
+          "date": "2023-03-29",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-ukraine-reconstruction-spending",
+      "subject": "Ukraine reconstruction spending",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-166"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-166",
+          "date": "2023-03-29",
+          "target_value": "DKK 20 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-foundation-for-ukrainian-reconstruction",
+      "subject": "Foundation for Ukrainian Reconstruction",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-167"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-167",
+          "date": "2023-03-29",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-total-allocation-for-ukraine",
+      "subject": "total allocation for Ukraine",
+      "category": "financial_guidance",
+      "n_claims": 1,
+      "first_date": "2023-03-29",
+      "last_date": "2023-03-29",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-168"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-168",
+          "date": "2023-03-29",
+          "target_value": "DKK 280 million",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-ebit-guidance",
+      "subject": "EBIT guidance",
+      "category": "financial_guidance",
+      "n_claims": 2,
+      "first_date": "2023-05-11",
+      "last_date": "2023-05-11",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-169",
+        "RKW-177"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-169",
+          "date": "2023-05-11",
+          "target_value": "€27 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-177",
+          "date": "2023-05-11",
+          "target_value": "€27 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-ebit-margin-guidance",
+      "subject": "EBIT margin guidance",
+      "category": "financial_guidance",
+      "n_claims": 2,
+      "first_date": "2023-05-11",
+      "last_date": "2023-05-11",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-171",
+        "RKW-179"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-171",
+          "date": "2023-05-11",
+          "target_value": "10%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-179",
+          "date": "2023-05-11",
+          "target_value": "10%",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-france-factory-construction",
+      "subject": "France factory construction",
+      "category": "strategic_intent",
+      "n_claims": 4,
+      "first_date": "2023-05-11",
+      "last_date": "2023-05-11",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-172",
+        "RKW-173",
+        "RKW-180",
+        "RKW-181"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-172",
+          "date": "2023-05-11",
+          "target_value": "resolved",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-173",
+          "date": "2023-05-11",
+          "target_value": "autumn 2023",
+          "hedge_level": "moderate",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-180",
+          "date": "2023-05-11",
+          "target_value": "resolved",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-181",
+          "date": "2023-05-11",
+          "target_value": "autumn 2023",
+          "hedge_level": "moderate",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-us-economic-outlook",
+      "subject": "US economic outlook",
+      "category": "market_outlook",
+      "n_claims": 2,
+      "first_date": "2023-05-11",
+      "last_date": "2023-05-11",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-174",
+        "RKW-182"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-174",
+          "date": "2023-05-11",
+          "target_value": "impact",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-182",
+          "date": "2023-05-11",
+          "target_value": "impact",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-us-market-outlook",
+      "subject": "US market outlook",
+      "category": "market_outlook",
+      "n_claims": 2,
+      "first_date": "2023-05-11",
+      "last_date": "2023-05-11",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-175",
+        "RKW-183"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-175",
+          "date": "2023-05-11",
+          "target_value": "very good year",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-183",
+          "date": "2023-05-11",
+          "target_value": "very good year",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-china-market-outlook",
+      "subject": "China market outlook",
+      "category": "market_outlook",
+      "n_claims": 2,
+      "first_date": "2023-05-11",
+      "last_date": "2023-05-11",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-176",
+        "RKW-184"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-176",
+          "date": "2023-05-11",
+          "target_value": "waking up",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-184",
+          "date": "2023-05-11",
+          "target_value": "waking up",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    }
+  ]
+}

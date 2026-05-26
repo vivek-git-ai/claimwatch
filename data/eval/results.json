@@ -1,0 +1,313 @@
+{
+  "generated_at": "2026-05-26T19:07:20.318227+00:00",
+  "gold_dir": "data/eval/gold",
+  "predictions": {
+    "extraction": "data\\claims\\claims_made.json",
+    "resolution": "data\\claims\\steps\\04_2022-02-10_earnings_call_Q4\\claims_with_resolutions.json"
+  },
+  "matcher_threshold": 0.88,
+  "extraction_agent": {
+    "description": "Claim extractor \u2014 how many golden claims did the pipeline reproduce?",
+    "gold_total": 54,
+    "predicted_total": 57,
+    "reproduction": {
+      "true_positives": 54,
+      "false_positives": 3,
+      "false_negatives": 0,
+      "precision": 0.9474,
+      "recall": 1.0,
+      "f1": 0.973,
+      "precision_pct": 94.7,
+      "recall_pct": 100.0,
+      "f1_pct": 97.3,
+      "summary": "reproduced 54 gold claims; 3 extra predictions; missed 0 gold"
+    },
+    "llm_judge_on_matched_pairs": {
+      "reproduces_gold": {
+        "label": "Same claim as gold",
+        "good": 53,
+        "total": 54,
+        "accuracy_pct": 98.1
+      },
+      "contextually_relevant": {
+        "label": "Valid forward-looking management claim",
+        "good": 54,
+        "total": 54,
+        "accuracy_pct": 100.0
+      },
+      "quote_supported": {
+        "label": "Quote supports paraphrase",
+        "good": 54,
+        "total": 54,
+        "accuracy_pct": 100.0
+      },
+      "all_criteria_pass": {
+        "label": "All three pass",
+        "good": 53,
+        "total": 54,
+        "accuracy_pct": 98.1
+      }
+    },
+    "by_transcript": [
+      {
+        "transcript_id": "00_2021-05-20_earnings_call_Q1",
+        "gold_total": 9,
+        "predicted_total": 9,
+        "reproduction": {
+          "true_positives": 9,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "precision_pct": 100.0,
+          "recall_pct": 100.0,
+          "f1_pct": 100.0,
+          "summary": "reproduced 9 gold claims; 0 extra predictions; missed 0 gold"
+        },
+        "llm_judge": {
+          "reproduces_gold": {
+            "label": "Same claim as gold",
+            "good": 8,
+            "total": 9,
+            "accuracy_pct": 88.9
+          },
+          "contextually_relevant": {
+            "label": "Valid forward-looking management claim",
+            "good": 9,
+            "total": 9,
+            "accuracy_pct": 100.0
+          },
+          "quote_supported": {
+            "label": "Quote supports paraphrase",
+            "good": 9,
+            "total": 9,
+            "accuracy_pct": 100.0
+          },
+          "all_criteria_pass": {
+            "label": "All three pass",
+            "good": 8,
+            "total": 9,
+            "accuracy_pct": 88.9
+          }
+        }
+      },
+      {
+        "transcript_id": "01_2021-06-08_esg_meeting",
+        "gold_total": 7,
+        "predicted_total": 7,
+        "reproduction": {
+          "true_positives": 7,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "precision_pct": 100.0,
+          "recall_pct": 100.0,
+          "f1_pct": 100.0,
+          "summary": "reproduced 7 gold claims; 0 extra predictions; missed 0 gold"
+        },
+        "llm_judge": {
+          "reproduces_gold": {
+            "label": "Same claim as gold",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          },
+          "contextually_relevant": {
+            "label": "Valid forward-looking management claim",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          },
+          "quote_supported": {
+            "label": "Quote supports paraphrase",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          },
+          "all_criteria_pass": {
+            "label": "All three pass",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          }
+        }
+      },
+      {
+        "transcript_id": "02_2021-08-19_earnings_call_Q2",
+        "gold_total": 21,
+        "predicted_total": 21,
+        "reproduction": {
+          "true_positives": 21,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "precision_pct": 100.0,
+          "recall_pct": 100.0,
+          "f1_pct": 100.0,
+          "summary": "reproduced 21 gold claims; 0 extra predictions; missed 0 gold"
+        },
+        "llm_judge": {
+          "reproduces_gold": {
+            "label": "Same claim as gold",
+            "good": 21,
+            "total": 21,
+            "accuracy_pct": 100.0
+          },
+          "contextually_relevant": {
+            "label": "Valid forward-looking management claim",
+            "good": 21,
+            "total": 21,
+            "accuracy_pct": 100.0
+          },
+          "quote_supported": {
+            "label": "Quote supports paraphrase",
+            "good": 21,
+            "total": 21,
+            "accuracy_pct": 100.0
+          },
+          "all_criteria_pass": {
+            "label": "All three pass",
+            "good": 21,
+            "total": 21,
+            "accuracy_pct": 100.0
+          }
+        }
+      },
+      {
+        "transcript_id": "03_2021-11-25_earnings_call_Q3",
+        "gold_total": 10,
+        "predicted_total": 10,
+        "reproduction": {
+          "true_positives": 10,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "precision_pct": 100.0,
+          "recall_pct": 100.0,
+          "f1_pct": 100.0,
+          "summary": "reproduced 10 gold claims; 0 extra predictions; missed 0 gold"
+        },
+        "llm_judge": {
+          "reproduces_gold": {
+            "label": "Same claim as gold",
+            "good": 10,
+            "total": 10,
+            "accuracy_pct": 100.0
+          },
+          "contextually_relevant": {
+            "label": "Valid forward-looking management claim",
+            "good": 10,
+            "total": 10,
+            "accuracy_pct": 100.0
+          },
+          "quote_supported": {
+            "label": "Quote supports paraphrase",
+            "good": 10,
+            "total": 10,
+            "accuracy_pct": 100.0
+          },
+          "all_criteria_pass": {
+            "label": "All three pass",
+            "good": 10,
+            "total": 10,
+            "accuracy_pct": 100.0
+          }
+        }
+      },
+      {
+        "transcript_id": "04_2022-02-10_earnings_call_Q4",
+        "gold_total": 7,
+        "predicted_total": 10,
+        "reproduction": {
+          "true_positives": 7,
+          "false_positives": 3,
+          "false_negatives": 0,
+          "precision": 0.7,
+          "recall": 1.0,
+          "f1": 0.8235,
+          "precision_pct": 70.0,
+          "recall_pct": 100.0,
+          "f1_pct": 82.4,
+          "summary": "reproduced 7 gold claims; 3 extra predictions; missed 0 gold"
+        },
+        "llm_judge": {
+          "reproduces_gold": {
+            "label": "Same claim as gold",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          },
+          "contextually_relevant": {
+            "label": "Valid forward-looking management claim",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          },
+          "quote_supported": {
+            "label": "Quote supports paraphrase",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          },
+          "all_criteria_pass": {
+            "label": "All three pass",
+            "good": 7,
+            "total": 7,
+            "accuracy_pct": 100.0
+          }
+        }
+      }
+    ]
+  },
+  "resolution_agent": {
+    "description": "Claim resolver \u2014 how many golden resolutions did the pipeline reproduce?",
+    "gold_total": 54,
+    "checkpoint": "04_2022-02-10_earnings_call_Q4",
+    "reproduction": {
+      "true_positives": 54,
+      "false_negatives": 0,
+      "recall": 1.0,
+      "recall_pct": 100.0,
+      "summary": "matched 54/54 gold resolution rows"
+    },
+    "status_exact_match": {
+      "label": "Predicted status equals gold (deterministic)",
+      "good": 54,
+      "total": 54,
+      "accuracy_pct": 100.0
+    },
+    "llm_judge_on_matched_pairs": {
+      "reproduces_gold_status": {
+        "label": "Status matches gold",
+        "good": 54,
+        "total": 54,
+        "accuracy_pct": 100.0
+      },
+      "evidence_relevant": {
+        "label": "Evidence supports status",
+        "good": 52,
+        "total": 54,
+        "accuracy_pct": 96.3
+      },
+      "resolution_contextually_sound": {
+        "label": "Overall resolution sound",
+        "good": 53,
+        "total": 54,
+        "accuracy_pct": 98.1
+      },
+      "all_criteria_pass": {
+        "label": "All three pass",
+        "good": 51,
+        "total": 54,
+        "accuracy_pct": 94.4
+      }
+    }
+  }
+}

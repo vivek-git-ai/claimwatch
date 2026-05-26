@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "corpus": "Rockwool International, 31 transcripts",
+  "total_threads": 7,
+  "threads": [
+    {
+      "thread_id": "T-production-ramp-up",
+      "subject": "Production ramp-up",
+      "category": "operational",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-001"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-001",
+          "date": "2021-05-20",
+          "target_value": "N/A",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-west-virginia-factory-startup",
+      "subject": "West Virginia factory startup",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-002"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-002",
+          "date": "2021-05-20",
+          "target_value": "midyear early third quarter 2021",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-fy2021-financial-guidance",
+      "subject": "FY2021 financial guidance",
+      "category": "financial_guidance",
+      "n_claims": 3,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-003",
+        "RKW-004",
+        "RKW-008"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-003",
+          "date": "2021-05-20",
+          "target_value": "10% to 12%, ~€730 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-004",
+          "date": "2021-05-20",
+          "target_value": "10% to 12%",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        },
+        {
+          "claim_id": "RKW-008",
+          "date": "2021-05-20",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-market-outlook",
+      "subject": "Market outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-005"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-005",
+          "date": "2021-05-20",
+          "target_value": "18 to 24 months",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-capex-guidance",
+      "subject": "CapEx guidance",
+      "category": "capex_capacity",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-006"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-006",
+          "date": "2021-05-20",
+          "target_value": "above €200 million",
+          "hedge_level": "firm",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-construction-industry-outlook",
+      "subject": "Construction industry outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-007"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-007",
+          "date": "2021-05-20",
+          "target_value": "N/A",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    },
+    {
+      "thread_id": "T-2021-performance-outlook",
+      "subject": "2021 performance outlook",
+      "category": "market_outlook",
+      "n_claims": 1,
+      "first_date": "2021-05-20",
+      "last_date": "2021-05-20",
+      "final_status": "open",
+      "claim_ids": [
+        "RKW-009"
+      ],
+      "evolution": [
+        {
+          "claim_id": "RKW-009",
+          "date": "2021-05-20",
+          "target_value": "better than 2019",
+          "hedge_level": "soft",
+          "status_after_this_utterance": "open"
+        }
+      ]
+    }
+  ]
+}
