@@ -2,12 +2,13 @@
 
 ## Overview
 
-ClaimWatch has four concerns:
+ClaimWatch has five concerns:
 
 1. **Offline pipeline** — Process transcripts in chronological order; extract forward-looking claims; resolve prior open claims using only later in-corpus evidence.
-2. **Corpus store** — Versioned JSON (claims, threads, step snapshots) committed to git.
-3. **Online interface** — Streamlit dashboard over JSON (Explorer, threads, resolution analytics, pipeline eval).
-4. **Quality eval** (optional) — Golden labels in `data/eval/gold/` compared to pipeline output; consolidated in `data/eval/results.json`.
+2. **Corpus store** — Versioned JSON (claims, threads, step snapshots) committed to git — **source of truth**.
+3. **Ask index (derived)** — Thread vectors in **Weaviate Cloud** for semantic search (Azure embeddings); rebuilt from `claims_threads.json`, not authoritative over JSON.
+4. **Online interface** — Streamlit dashboard over JSON plus **Ask** (NL questions with citations).
+5. **Quality eval** (optional) — Golden labels in `data/eval/gold/` compared to pipeline output; consolidated in `data/eval/results.json`.
 
 ```mermaid
 flowchart TB
@@ -34,14 +35,25 @@ flowchart TB
     Eval[data/eval/]
   end
 
+  subgraph askIndex [Ask index derived]
+    Embed[Azure embeddings]
+    WV[Weaviate ClaimThread]
+    Embed --> WV
+  end
+
   subgraph online [Online]
     Dash[Streamlit dashboard]
+    Ask[Ask page]
     JSON --> Dash
+    JSON --> Ask
     Eval --> Dash
+    WV --> Ask
+    Ask --> Dash
   end
 
   PDF --> Parse
   Store --> JSON
+  JSON --> Embed
 ```
 
 ## Walk-forward orchestrator
@@ -58,17 +70,52 @@ For each transcript **T** in date order:
 
 Resolution is **in-corpus only**: evidence must appear in a later transcript in the processed set, not external financials.
 
+## Ask — natural language (Weaviate)
+
+Optional **query-time** path (does not change walk-forward truth in JSON):
+
+```mermaid
+sequenceDiagram
+  participant U as User
+  participant UI as Ask page
+  participant AZ as Azure embeddings
+  participant WV as Weaviate
+  participant JSON as claims_threads.json
+  participant LLM as Azure chat
+
+  U->>UI: Question
+  UI->>AZ: Embed question
+  AZ->>WV: near_vector top-k thread_id
+  WV-->>UI: T-leverage-guidance etc
+  UI->>JSON: get_thread trace + quotes
+  JSON-->>LLM: Structured context
+  LLM-->>UI: Narrative + CitationRecords
+  UI-->>U: Answer + View claim links
+```
+
+| Step | Module | Notes |
+|------|--------|--------|
+| Index build | `src/search/weaviate_threads.py` | `index-threads --reset` embeds ~208 threads, upserts `ClaimThread` |
+| Search | same | Cosine on query vector; keyword fallback if Weaviate unset |
+| Synthesize | `src/agents/query_agent.py` | Citations must match `claim_id`s in loaded trace |
+| UI | `app/dashboard.py` `page_ask` | Metrics, reindex buttons, retrieval table, deep links |
+
+**Env:** `WEAVIATE_URL`, `WEAVIATE_API_KEY`, `AZURE_EMBEDDING_DEPLOYMENT` (plus existing Azure chat vars for synthesis).
+
 ## Dashboard pages
 
 | Page | Data source |
 |------|-------------|
 | Overview | JSON corpus aggregates |
+| **Ask** | Weaviate search + `claims_threads.json` + Azure LLM |
 | Pipeline Eval | `data/eval/results.json` |
 | Claims Explorer | `claims_with_resolutions.json` |
 | Claim Detail | Claim + PDF citation + transcript excerpt |
 | Threads | `claims_threads.json` + trace |
 | Resolution Analytics | Status timelines, time-to-resolve |
 | Speakers | Speaker-level stats |
+| Architecture | Embedded `docs/claimwatch-architecture.html` |
+| LLM Cost | Heuristic cost model |
 
 ## Golden-set evaluation
 
@@ -86,4 +133,8 @@ See [evaluation.md](evaluation.md). Commands: `eval`, `eval-extract`, `eval-reso
 | `src/pipeline/orchestrator.py` | Chronological loop |
 | `src/pipeline/claim_trace.py` | Thread traces from step diffs |
 | `src/eval/*` | Gold matching + LLM judge |
+| `src/search/weaviate_threads.py` | Weaviate `ClaimThread` index + search |
+| `src/search/thread_embeddings.py` | Search facade (Weaviate or keyword fallback) |
+| `src/agents/query_agent.py` | Ask synthesis + citations |
+| `src/llm/azure.py` | Azure chat + embeddings |
 | `app/dashboard.py` | Streamlit UI |

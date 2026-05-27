@@ -35,6 +35,28 @@ def get_extraction_deployment() -> str:
     )
 
 
+def get_embedding_deployment() -> str:
+    return os.getenv("AZURE_EMBEDDING_DEPLOYMENT", "text-embedding-3-small")
+
+
+def get_embedding_dimensions() -> int:
+    return int(os.getenv("AZURE_EMBEDDING_DIMENSIONS", "1536"))
+
+
+def embed_texts(texts: list[str], *, batch_size: int = 64) -> list[list[float]]:
+    """Batch-embed strings via Azure OpenAI embeddings API."""
+    if not texts:
+        return []
+    client = get_azure_chat_client()
+    model = get_embedding_deployment()
+    out: list[list[float]] = []
+    for i in range(0, len(texts), batch_size):
+        chunk = texts[i : i + batch_size]
+        resp = client.embeddings.create(model=model, input=chunk)
+        out.extend(item.embedding for item in resp.data)
+    return out
+
+
 def chat_structured(
     messages: list[dict],
     response_model: type[T],

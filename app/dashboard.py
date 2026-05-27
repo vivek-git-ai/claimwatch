@@ -15,17 +15,43 @@ import os
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import streamlit.components.v1 as components
 from dotenv import load_dotenv
 
 load_dotenv()
 
 
 def _apply_streamlit_secrets() -> None:
-    """Map Streamlit Cloud secrets → os.environ (for Azure OpenAI)."""
+    """Map Streamlit Cloud secrets → os.environ (Azure, Weaviate)."""
+    _secret_keys = (
+        "AZURE_OPENAI_ENDPOINT",
+        "AZURE_OPENAI_API_KEY",
+        "AZURE_OPENAI_API_VERSION",
+        "AZURE_CHAT_API_VERSION",
+        "AZURE_DEPLOYMENT_NAME",
+        "AZURE_EXTRACTION_DEPLOYMENT",
+        "AZURE_EMBEDDING_DEPLOYMENT",
+        "AZURE_EMBEDDING_DIMENSIONS",
+        "WEAVIATE_URL",
+        "WEAVIATE_API_KEY",
+        "WEAVIATE_MODE",
+    )
+
+    def _set_env(key: str, value: str) -> None:
+        if value and key not in os.environ:
+            os.environ[key] = value
+
     try:
         for key, value in st.secrets.items():
-            if isinstance(value, str) and value and key not in os.environ:
-                os.environ[key] = value
+            if isinstance(value, str) and value:
+                _set_env(key, value)
+        for key in _secret_keys:
+            try:
+                val = st.secrets[key]
+                if isinstance(val, str):
+                    _set_env(key, val)
+            except (KeyError, TypeError):
+                pass
     except Exception:
         pass
 
@@ -61,6 +87,10 @@ from src.analytics.pdf_citation import (
     resolve_pdf_path,
 )
 from src.analytics.transcript_excerpt import get_transcript_excerpt
+from src.agents.query_agent import AskAnswer, CitationRecord, answer_question
+from src.llm.azure import get_embedding_deployment, get_embedding_dimensions
+from src.search import weaviate_threads
+from src.search.thread_embeddings import ThreadEmbeddingIndex
 
 _EXCERPT_CSS = """
 <style>
@@ -113,6 +143,50 @@ def get_bundle():
 def get_timelines(_bundle_key: str):
     bundle = get_bundle()
     return build_resolution_timelines(bundle)
+
+
+@st.cache_resource
+def get_thread_index():
+    bundle = get_bundle()
+    return ThreadEmbeddingIndex(bundle)
+
+
+@st.cache_data(ttl=30)
+def cached_weaviate_status():
+    return weaviate_threads.get_status()
+
+
+def _render_weaviate_sidebar(bundle) -> None:
+    """Always-visible Ask / Weaviate index status in sidebar."""
+    corpus_threads = bundle.claims_threads.total_threads
+    with st.sidebar.expander("Ask · Weaviate search", expanded=False):
+        status = cached_weaviate_status()
+        if not status["configured"]:
+            st.warning("Weaviate not configured (`WEAVIATE_URL`, `WEAVIATE_API_KEY`).")
+            st.caption("Keyword fallback only on **Ask** page.")
+            return
+        if not status["connected"]:
+            st.error("Cannot reach Weaviate")
+            if status.get("error"):
+                st.caption(status["error"])
+            return
+        indexed = status["thread_count"]
+        in_sync = indexed >= corpus_threads and indexed > 0
+        if in_sync:
+            st.success(f"Indexed **{indexed}** / {corpus_threads} threads")
+        elif indexed == 0:
+            st.warning("Index empty — open **Ask** to reindex")
+        else:
+            st.warning(f"Indexed **{indexed}** / {corpus_threads} — reindex on **Ask**")
+        st.caption(f"Cluster: `{status.get('host', '')}`")
+        st.caption(f"Collection: `{weaviate_threads.COLLECTION_NAME}`")
+        cols = status.get("collections") or []
+        if cols:
+            st.caption("Collections: " + ", ".join(f"`{c}`" for c in cols))
+        st.caption(
+            f"Embeddings: `{get_embedding_deployment()}` "
+            f"({get_embedding_dimensions()}d) via Azure"
+        )
 
 
 @st.cache_data
@@ -290,6 +364,26 @@ def render_pdf_citation(
         st.caption(
             "Run `rebuild-trace` to attach resolving transcript id, or check resolution timeline."
         )
+
+
+_ARCHITECTURE_HTML = _ROOT / "docs" / "claimwatch-architecture.html"
+
+
+@st.cache_data
+def _load_architecture_html() -> str:
+    if not _ARCHITECTURE_HTML.is_file():
+        return (
+            "<p style='font-family:sans-serif;color:#c00'>"
+            f"Missing {_ARCHITECTURE_HTML}. Add docs/claimwatch-architecture.html to the repo."
+            "</p>"
+        )
+    return _ARCHITECTURE_HTML.read_text(encoding="utf-8")
+
+
+def page_architecture() -> None:
+    """Embedded interactive architecture (docs/claimwatch-architecture.html)."""
+    st.caption("Interactive diagram from `docs/claimwatch-architecture.html` — click nodes for details.")
+    components.html(_load_architecture_html(), height=920, scrolling=True)
 
 
 def page_overview(bundle, timelines):
@@ -584,7 +678,19 @@ def page_threads(bundle, timelines):
     labels = [
         f"{t.subject} ({t.n_claims} claims, {_fmt_status(t.final_status)})" for t in threads
     ]
-    idx = st.selectbox("Select thread", range(len(threads)), format_func=lambda i: labels[i])
+    default_tid = st.session_state.pop("selected_thread_id", None)
+    default_idx = 0
+    if default_tid:
+        for i, t in enumerate(threads):
+            if t.thread_id == default_tid:
+                default_idx = i
+                break
+    idx = st.selectbox(
+        "Select thread",
+        range(len(threads)),
+        index=default_idx,
+        format_func=lambda i: labels[i],
+    )
     thread = threads[idx]
 
     render_thread_trace(thread)
@@ -608,6 +714,208 @@ def page_threads(bundle, timelines):
         if cid in bundle.claim_by_id:
             with st.expander(f"{cid} — {bundle.claim_by_id[cid].claim.paraphrase[:80]}…"):
                 render_claim_detail(bundle, timelines, cid)
+
+
+def _navigate_to_claim(claim_id: str) -> None:
+    st.session_state["selected_claim_id"] = claim_id
+    st.session_state["nav_page"] = "Claim Detail"
+    st.rerun()
+
+
+def _navigate_to_thread(thread_id: str) -> None:
+    st.session_state["selected_thread_id"] = thread_id
+    st.session_state["nav_page"] = "Threads"
+    st.rerun()
+
+
+def _render_citation_card(cit: CitationRecord, key_prefix: str) -> None:
+    st.markdown(
+        f"**{cit.claim_id}** · `{cit.thread_id}` · {cit.date} · {cit.speaker} · "
+        f"**{_fmt_status(cit.status)}**"
+    )
+    if cit.quote:
+        st.markdown(f"> {cit.quote[:500]}{'…' if len(cit.quote) > 500 else ''}")
+    if cit.evidence_quote:
+        st.caption(f"Evidence: {cit.evidence_quote[:400]}{'…' if len(cit.evidence_quote) > 400 else ''}")
+    c1, c2 = st.columns(2)
+    with c1:
+        if st.button(f"View claim {cit.claim_id}", key=f"{key_prefix}_claim_{cit.claim_id}"):
+            _navigate_to_claim(cit.claim_id)
+    with c2:
+        if st.button(f"View thread", key=f"{key_prefix}_thread_{cit.thread_id}"):
+            _navigate_to_thread(cit.thread_id)
+
+
+def page_ask(bundle, timelines):
+    st.subheader("Ask")
+    corpus_threads = bundle.claims_threads.total_threads
+    status = cached_weaviate_status()
+
+    # --- Search backend status (visible metrics) ---
+    m1, m2, m3, m4 = st.columns(4)
+    if status["configured"] and status["connected"]:
+        indexed = status["thread_count"]
+        m1.metric("Threads in corpus", corpus_threads)
+        m2.metric("Threads in Weaviate", indexed)
+        m3.metric("Search backend", "Weaviate")
+        m4.metric("Similarity", "cosine")
+        search_mode = "weaviate"
+    elif status["configured"]:
+        m1.metric("Threads in corpus", corpus_threads)
+        m2.metric("Weaviate", "Error")
+        m3.metric("Search backend", "—")
+        m4.metric("Similarity", "—")
+        search_mode = "error"
+        st.error(f"Weaviate connection failed: {status.get('error', 'unknown')}")
+    else:
+        m1.metric("Threads in corpus", corpus_threads)
+        m2.metric("Weaviate", "Not configured")
+        m3.metric("Search backend", "Keyword fallback")
+        m4.metric("Similarity", "—")
+        search_mode = "keyword"
+
+    with st.expander("Search index & embeddings", expanded=True):
+        if status["configured"] and status["connected"]:
+            st.markdown(
+                f"- **Cluster:** `{status.get('host', '')}`\n"
+                f"- **Collection:** `{weaviate_threads.COLLECTION_NAME}`\n"
+                f"- **Collections on cluster:** {', '.join(f'`{c}`' for c in (status.get('collections') or [])) or '—'}\n"
+                f"- **Embeddings:** Azure `{get_embedding_deployment()}` "
+                f"({get_embedding_dimensions()} dimensions)\n"
+                f"- **Flow:** question → embed → Weaviate near_vector → thread trace → LLM answer"
+            )
+        elif status["configured"]:
+            st.markdown("Weaviate credentials are set but the cluster could not be reached.")
+        else:
+            st.markdown(
+                "Set `WEAVIATE_URL` and `WEAVIATE_API_KEY` in `.env` (or Streamlit secrets) "
+                "for semantic search. Without them, Ask uses simple keyword matching on thread subjects."
+            )
+
+        btn1, btn2, btn3 = st.columns(3)
+        if status["configured"]:
+            if btn1.button("Reindex threads", type="primary", use_container_width=True):
+                with st.spinner("Embedding threads (Azure) and upserting to Weaviate…"):
+                    n = weaviate_threads.sync_threads_to_weaviate(bundle, reset=True)
+                cached_weaviate_status.clear()
+                st.success(f"Indexed {n} threads into Weaviate.")
+                st.rerun()
+            if btn2.button("Clean legacy + reindex", use_container_width=True):
+                with st.spinner("Deleting legacy collections and reindexing…"):
+                    n = weaviate_threads.sync_threads_to_weaviate(
+                        bundle, reset=True, include_legacy_clean=True
+                    )
+                cached_weaviate_status.clear()
+                st.success(f"Cleaned cluster and indexed {n} threads.")
+                st.rerun()
+            if btn3.button("Refresh status", use_container_width=True):
+                cached_weaviate_status.clear()
+                st.rerun()
+        if (
+            search_mode == "weaviate"
+            and status.get("thread_count", 0) == 0
+        ):
+            st.warning(
+                "Weaviate index is empty. Click **Reindex threads** above, or run:\n\n"
+                "`uv run python -m src.main index-threads --reset --clean-all`"
+            )
+        elif search_mode == "weaviate" and status.get("thread_count", 0) < corpus_threads:
+            st.info(
+                f"Index has {status['thread_count']} objects but corpus has {corpus_threads} "
+                "threads — consider reindexing after a pipeline run."
+            )
+
+    st.session_state["ask_search_mode"] = search_mode
+
+    question = st.text_area(
+        "Your question",
+        placeholder="e.g. How did leverage guidance change over time?",
+        height=100,
+        key="ask_question",
+    )
+
+    col_run, col_clear = st.columns([1, 4])
+    with col_run:
+        run = st.button("Ask", type="primary", disabled=not question.strip())
+
+    if "ask_last_answer" not in st.session_state:
+        st.session_state.ask_last_answer = None
+        st.session_state.ask_last_hits = None
+        st.session_state.ask_last_usage = None
+
+    if run and question.strip():
+        mode_label = st.session_state.get("ask_search_mode", "weaviate")
+        with st.spinner(
+            f"Embedding question → {'Weaviate' if mode_label == 'weaviate' else 'keyword'} search → LLM…"
+        ):
+            try:
+                index = get_thread_index()
+                answer, hits, usage = answer_question(
+                    question.strip(),
+                    bundle,
+                    index=index,
+                )
+                st.session_state.ask_last_answer = answer
+                st.session_state.ask_last_hits = hits
+                st.session_state.ask_last_usage = usage
+                st.session_state.ask_last_question = question.strip()
+            except Exception as e:
+                st.error(str(e))
+                return
+
+    answer: AskAnswer | None = st.session_state.get("ask_last_answer")
+    if not answer:
+        st.info("Enter a question and click **Ask**.")
+        return
+
+    if st.session_state.get("ask_last_question"):
+        st.caption(f"Question: *{st.session_state.ask_last_question}*")
+
+    hits = st.session_state.get("ask_last_hits") or []
+    if hits:
+        st.markdown("### Thread matches (retrieval)")
+        hit_rows = [
+            {
+                "rank": i + 1,
+                "score": round(h.score, 4),
+                "thread_id": h.thread_id,
+                "subject": h.subject,
+            }
+            for i, h in enumerate(hits)
+        ]
+        st.dataframe(pd.DataFrame(hit_rows), use_container_width=True, hide_index=True)
+        pick_cols = st.columns(min(len(hits), 5))
+        for i, h in enumerate(hits[:5]):
+            with pick_cols[i]:
+                if st.button(
+                    f"Open {h.thread_id[:12]}…",
+                    key=f"ask_open_thread_{h.thread_id}",
+                    help=h.subject,
+                ):
+                    _navigate_to_thread(h.thread_id)
+
+    thread = bundle.thread_by_id.get(answer.thread_id)
+    if thread:
+        st.markdown(f"### Thread: {thread.subject}")
+        st.caption(f"`{answer.thread_id}` · final status: **{_fmt_status(thread.final_status)}**")
+        if st.button("View full thread trace", key="ask_view_thread"):
+            _navigate_to_thread(answer.thread_id)
+
+    st.markdown("### Answer")
+    st.markdown(answer.narrative)
+
+    if answer.citations:
+        st.markdown("### Sources")
+        for i, cit in enumerate(answer.citations):
+            with st.container(border=True):
+                _render_citation_card(cit, f"ask_cit_{i}")
+
+    usage = st.session_state.get("ask_last_usage")
+    if usage:
+        st.caption(
+            f"Model: {usage.get('model', '—')} · "
+            f"tokens in/out: {usage.get('tokens_in', 0)}/{usage.get('tokens_out', 0)}"
+        )
 
 
 def page_resolution(bundle, timelines):
@@ -924,6 +1232,29 @@ def main():
         initial_sidebar_state="expanded",
     )
 
+    st.sidebar.title("ClaimWatch")
+
+    nav_options = [
+        "Overview",
+        "Architecture",
+        "Ask",
+        "LLM Cost",
+        "Pipeline Eval",
+        "Claims Explorer",
+        "Claim Detail",
+        "Threads",
+        "Resolution Analytics",
+        "Speakers",
+    ]
+    default_nav = st.session_state.pop("nav_page", nav_options[0])
+    if default_nav not in nav_options:
+        default_nav = nav_options[0]
+    page = st.sidebar.radio("Navigate", nav_options, index=nav_options.index(default_nav))
+
+    if page == "Architecture":
+        page_architecture()
+        return
+
     if not corpus_available():
         st.error(
             "Corpus not found. Run the pipeline first:\n\n"
@@ -939,7 +1270,6 @@ def main():
 
     timelines = get_timelines(str(bundle.corpus_dir))
 
-    st.sidebar.title("ClaimWatch")
     st.sidebar.caption(bundle.corpus_label)
     st.sidebar.caption(f"Data: `{bundle.corpus_dir}`")
     pdf_ok = resolve_pdf_path(bundle.enriched[0].claim.source_doc) if bundle.enriched else None
@@ -951,6 +1281,8 @@ def main():
     if not bundle.step_snapshots:
         st.sidebar.warning("No step snapshots — resolution timelines limited.")
 
+    _render_weaviate_sidebar(bundle)
+
     with st.sidebar.expander("Outcome mapping (brief ↔ corpus)", expanded=False):
         st.caption("Take-home: materialized / partial / didn't / unresolvable")
         st.dataframe(
@@ -960,23 +1292,9 @@ def main():
         )
         st.caption("[docs/taxonomy.md](docs/taxonomy.md)")
 
-    nav_options = [
-        "Overview",
-        "LLM Cost",
-        "Pipeline Eval",
-        "Claims Explorer",
-        "Claim Detail",
-        "Threads",
-        "Resolution Analytics",
-        "Speakers",
-    ]
-    default_nav = st.session_state.pop("nav_page", nav_options[0])
-    if default_nav not in nav_options:
-        default_nav = nav_options[0]
-    page = st.sidebar.radio("Navigate", nav_options, index=nav_options.index(default_nav))
-
     pages = {
         "Overview": lambda: page_overview(bundle, timelines),
+        "Ask": lambda: page_ask(bundle, timelines),
         "LLM Cost": lambda: page_llm_cost(bundle, timelines),
         "Pipeline Eval": lambda: page_pipeline_eval(bundle, timelines),
         "Claims Explorer": lambda: page_explorer(bundle, timelines),

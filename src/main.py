@@ -8,6 +8,8 @@ Usage:
   python -m src.main restore
   python -m src.main check
   python -m src.main status
+  python -m src.main ask "How did leverage guidance change?"
+  python -m src.main index-threads --reset --clean-all
 """
 
 import os
@@ -657,6 +659,89 @@ def cmd_rebuild_trace(args: list[str]) -> None:
     )
 
 
+def cmd_index_threads(args: list[str]) -> None:
+    """Embed threads (Azure) and upsert into Weaviate Cloud."""
+    from src.analytics.corpus_loader import corpus_available, load_corpus
+    from src.search import weaviate_threads
+
+    if not corpus_available():
+        console.print("[red]Corpus not found. Run: python -m src.main run --all[/red]")
+        sys.exit(1)
+    if not weaviate_threads.weaviate_configured():
+        console.print("[red]Set WEAVIATE_URL and WEAVIATE_API_KEY in .env[/red]")
+        sys.exit(1)
+
+    reset = "--reset" in args
+    clean_all = "--clean-all" in args
+    bundle = load_corpus()
+
+    if reset or clean_all:
+        deleted = weaviate_threads.clean_ask_collections(include_legacy=clean_all)
+        if deleted:
+            console.print(f"[yellow]Deleted collections:[/yellow] {', '.join(deleted)}")
+        else:
+            console.print("[dim]No collections to delete[/dim]")
+
+    console.print("[dim]Embedding threads and writing to Weaviate…[/dim]")
+    n = weaviate_threads.sync_threads_to_weaviate(
+        bundle,
+        reset=False,
+        include_legacy_clean=False,
+    )
+    remaining = weaviate_threads.list_collections()
+    console.print(f"[green]Indexed {n} threads into ClaimThread[/green]")
+    console.print(f"[dim]Collections on cluster: {', '.join(remaining) or '(none)'}[/dim]")
+
+
+def cmd_ask(args: list[str]) -> None:
+    """Answer a natural-language question about a guidance thread."""
+    from src.agents.query_agent import answer_question
+    from src.analytics.corpus_loader import corpus_available, load_corpus
+    from src.search.thread_embeddings import ThreadEmbeddingIndex
+
+    if not corpus_available():
+        console.print("[red]Corpus not found. Run: python -m src.main run --all[/red]")
+        sys.exit(1)
+
+    if not args:
+        console.print("[red]Usage: python -m src.main ask \"Your question here\"[/red]")
+        sys.exit(1)
+
+    question = " ".join(args).strip()
+    bundle = load_corpus()
+    index = ThreadEmbeddingIndex(bundle)
+
+    console.print(f"[dim]Question:[/dim] {question}\n")
+    try:
+        answer, hits, usage = answer_question(question, bundle, index=index)
+    except Exception as e:
+        console.print(f"[red]{e}[/red]")
+        sys.exit(1)
+
+    if hits:
+        console.print("[bold]Thread matches[/bold]")
+        for h in hits:
+            console.print(f"  {h.score:.3f}  {h.thread_id}  {h.subject}")
+        console.print()
+
+    thread = bundle.thread_by_id.get(answer.thread_id)
+    title = thread.subject if thread else answer.thread_id
+    console.print(Panel(answer.narrative, title=f"[bold]{title}[/bold] ({answer.thread_id})"))
+
+    if answer.citations:
+        console.print("\n[bold]Citations[/bold]")
+        for cit in answer.citations:
+            console.print(f"\n[cyan]{cit.claim_id}[/cyan] · {cit.date} · {cit.speaker} · {cit.status}")
+            console.print(f"  {cit.quote[:200]}{'…' if len(cit.quote) > 200 else ''}")
+            if cit.evidence_quote:
+                console.print(f"  [dim]Evidence: {cit.evidence_quote[:200]}…[/dim]")
+
+    console.print(
+        f"\n[dim]Model {usage.get('model')} · "
+        f"tokens {usage.get('tokens_in')}/{usage.get('tokens_out')}[/dim]"
+    )
+
+
 def cmd_dashboard(args: list[str]) -> None:
     """Launch Streamlit analytics dashboard."""
     import subprocess
@@ -879,6 +964,8 @@ COMMANDS = {
     "restore": cmd_restore,
     "check": cmd_check,
     "status": cmd_status,
+    "ask": cmd_ask,
+    "index-threads": cmd_index_threads,
     "dashboard": cmd_dashboard,
     "rebuild-trace": cmd_rebuild_trace,
     "eval": cmd_eval,

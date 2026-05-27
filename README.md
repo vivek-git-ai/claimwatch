@@ -18,7 +18,13 @@ Edit `.env` with your **Azure OpenAI** endpoint and API key (used for extraction
 uv run python -m src.main dashboard
 ```
 
-Open **http://localhost:8501** — Explorer, threads, resolution analytics, and pipeline eval use **`data/claims/`** JSON (included in the repo).
+Open **http://localhost:8501** — Explorer, threads, resolution analytics, pipeline eval, and **Ask** (semantic Q&A). Browse pages use **`data/claims/`** JSON; **Ask** also needs Weaviate + Azure embedding keys (see `.env.example`).
+
+After pulling corpus changes, refresh the Ask index:
+
+```powershell
+uv run python -m src.main index-threads --reset
+```
 
 ### Rebuild corpus (maintainers)
 
@@ -39,6 +45,8 @@ Commit updated `data/claims/` when the corpus changes.
 | `run --all` | Walk-forward extraction + resolution |
 | `rebuild-trace` | Rebuild `claims_threads.json` traces from steps |
 | `dashboard` | Streamlit analytics UI |
+| `index-threads` | Embed threads → Weaviate (`--reset`, `--clean-all`) |
+| `ask "…"` | CLI natural-language thread Q&A |
 | `status` | Parsed + claim corpus counts |
 | `eval` | Golden-set eval → `data/eval/results.json` |
 | `eval-extract` / `eval-resolve` | Single eval pass + detailed reports |

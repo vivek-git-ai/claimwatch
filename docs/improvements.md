@@ -2,7 +2,7 @@
 
 Prioritised ideas based on current gaps and user feedback.
 
-**In place:** Walk-forward pipeline, committed `data/claims/`, golden-set eval, JSON-only Streamlit dashboard.
+**In place:** Walk-forward pipeline, committed `data/claims/`, golden-set eval, Streamlit dashboard, **Ask** (Weaviate + Azure embeddings).
 
 ## High impact — trust and quality
 
@@ -28,10 +28,10 @@ Prioritised ideas based on current gaps and user feedback.
 
 ## High impact — exploration
 
-### 5. Corpus search (if needed again)
+### 5. Corpus search (partially done)
 
-- Local full-text search over claims (SQLite FTS or similar) without a hosted vector DB.
-- Or optional semantic search as a separate, clearly optional module.
+- **Done:** Ask semantic search over threads via Weaviate (`ClaimThread`).
+- **Next:** Hybrid FTS + vector; claim-level (not just thread) index; Explorer search box.
 
 ### 6. Pipeline cost report
 

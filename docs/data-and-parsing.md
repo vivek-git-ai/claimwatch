@@ -31,8 +31,14 @@ flowchart LR
   subgraph surfaces [4. Surfaces]
     Dash[Streamlit dashboard]
     Eval[Pipeline Eval]
+    Ask[Ask page]
+    WV[Weaviate ClaimThread]
     Claims --> Dash
     Claims --> Eval
+    Claims --> Ask
+    Claims --> WV
+    WV --> Ask
+    Ask --> Dash
   end
 ```
 
@@ -40,6 +46,7 @@ flowchart LR
 |-------|---------|--------|--------------|
 | Parse | `parse --all` | `data/parsed/` | Maintainers (once per PDF batch) |
 | Pipeline | `run --all` | `data/claims/` | Everyone (committed to git) |
+| Ask index | `index-threads --reset` | Weaviate `ClaimThread` vectors | After corpus changes ([architecture.md](architecture.md)) |
 | Eval | `eval` | `data/eval/results.json` | Quality / demo ([evaluation.md](evaluation.md)) |
 
 ---

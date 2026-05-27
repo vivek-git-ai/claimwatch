@@ -32,13 +32,21 @@
 
 **Cost:** May mark claims stale when evidence was implicit or in a different wording. Grace period is a blunt instrument.
 
-## JSON-only analytics UI
+## JSON source of truth + derived Weaviate index
 
-**Choice:** Dashboard reads committed `data/claims/` JSON only — no vector database at query time.
+**Choice:** Walk-forward output lives in `data/claims/*.json` (git). **Ask** uses a **derived** Weaviate Cloud collection (`ClaimThread`) built by `index-threads` — Azure embeddings, cosine search, then load full thread trace from JSON for the LLM answer.
 
-**Why:** One source of truth; simple teammate setup (`git pull` + dashboard); charts and filters use the same files as eval.
+**Why:** Explorer/eval stay simple on JSON; semantic “how did X evolve?” questions get a small hosted index without making vectors authoritative over the corpus.
 
-**Cost:** No natural-language “Ask” over the corpus in the app; exploration is filter/table/trace based. Full-text search would require a new feature (local SQLite, embedded search, or restored vector index).
+**Cost:** Extra ops (Weaviate cluster, reindex after corpus changes); Ask needs Azure at query time; answers are only as good as thread grouping + retrieval top-1 thread.
+
+## JSON browse without Weaviate
+
+**Choice:** Overview, Explorer, Threads, Resolution, etc. read JSON only — no Weaviate required.
+
+**Why:** Teammates can `git pull` + dashboard without cloud vector infra.
+
+**Cost:** Ask falls back to keyword match on thread subjects if `WEAVIATE_*` is unset.
 
 ## Subject line vs meeting date
 
